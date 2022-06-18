@@ -57,8 +57,9 @@ function QBCore.Functions.GetOfflinePlayerByCitizenId(citizenid)
 end
 
 function QBCore.Functions.GetPlayerByPhone(number)
+    local num = tonumber(number)
     for src, _ in pairs(QBCore.Players) do
-        if QBCore.Players[src].PlayerData.charinfo.phone == number then
+        if QBCore.Players[src].PlayerData.charinfo.phone == num then
             return QBCore.Players[src]
         end
     end
